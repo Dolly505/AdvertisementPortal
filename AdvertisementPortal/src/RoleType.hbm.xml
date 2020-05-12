@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+       <hibernate-mapping>
+          <class name="com.modal.RoleType" table="role_type">
+             <id name="id" column="role_id">
+                <generator class="increment"></generator>
+             </id>
+             <property name="roleType" column="role_type" length="30"></property>
+              <property name="roleActiveFlag" column="role_active_flag" length="1"></property>
+             
+          </class>
+      </hibernate-mapping>

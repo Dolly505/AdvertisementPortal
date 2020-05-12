@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+        <hibernate-mapping>
+          <class name="com.modal.Publisher" table="publisher_tbl">
+             <id name="publisherID" column="publisher_id">
+                <generator class="increment"></generator>
+             </id>
+             <property name="txtLocationName" column="location_name" length="30" ></property>
+             <property name="duration" column="duration" length="30" ></property>
+             <property name="size" column="size" length="30" ></property>
+             <property name="price" column="price" length="30" ></property>
+             <property name="description" column="description" length="30" ></property>
+             <property name="sellerName" column="seller_name" length="30" ></property>
+             <property name="sellerEmail" column="seller_email" length="30" unique="true"></property>
+             <property name="sellerPhone" column="seller_phone" length="30" ></property>
+             <property name="sellerAddress" column="seller_address" length="30" ></property>
+             <property name="premiumAvt" column="premium_avt" length="30" ></property>
+             <property name="paymentOption" column="payment_option" length="30"></property>
+           <many-to-one name="category" class="com.modal.Category" fetch="select">
+               <column name="category_id" not-null="true"></column>
+           </many-to-one>
+          </class>
+          
+        </hibernate-mapping>

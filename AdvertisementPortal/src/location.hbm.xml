@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+        <hibernate-mapping>
+          <class name="com.modal.Location" table="location_tbl">
+             <id name="LocationId" column="location_id">
+                <generator class="increment"></generator>
+             </id>
+             <property name="locationName" column="location_name" length="30" unique="true"></property>
+           <many-to-one name="category" class="com.modal.Category" fetch="select">
+               <column name="category_id" not-null="true"></column>
+           </many-to-one>
+          </class>
+          
+        </hibernate-mapping>
